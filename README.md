@@ -101,7 +101,7 @@ Zuständig für die Anzeige als Diagramm. Enthält auch ein kleines Menü, um du
 ### DashboardComponent
 Zeigt das Dashboard an. Holt sich die Dashboard-Items mithilfe des Services und generiert daraus DashboardItemComponents.
 
-![DashboardComponent](./doc/dashboard.png)
+![DashboardComponent](./doc/dashboard.PNG)
 
 ### DashboardItemComponent
 Ist eine einzelne Anzeige auf dem Dashboard. Hier können verschiedenste Abfragen durchgeführt und die Präferenzen gespeichert werden.
