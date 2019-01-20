@@ -92,45 +92,59 @@ Aktualisiert ein Item im lokalen Speicher.
 
 ## Komponenten
 
-### ChartComponent
-Zuständig für die Anzeige als Diagramm. Enthält auch ein kleines Menü, um durch die verschiedenen Messtypen zu navigieren (Temperature, Pressure, ...).
-![ChartComponent](doc/chart.png)
-
 ### DashboardComponent
 Zeigt das Dashboard an. Holt sich die Dashboard-Items mithilfe des Services und generiert daraus DashboardItemComponents.
 ![DashboardComponent](doc/dashboard.png)
+
+<div style="page-break-after: always;"></div>
 
 ### DashboardItemComponent
 Ist eine einzelne Anzeige auf dem Dashboard. Hier können verschiedenste Abfragen durchgeführt und die Präferenzen gespeichert werden.
 ![DashboardItemComponent](doc/dashboarditem.png)
 
+<div style="page-break-after: always;"></div>
+
 ### DashboardItemSettingsComponent
 Ist eine Teilkomponente eines Dashboard-Items. Hier kann die Konvertierung der Temperatur (Celsius, Fahrenheit, ...) eingestellt werden.
 ![DashboardItemSettingsComponent](doc/dashboarditemsettings.png)
+
+### ChartComponent
+Zuständig für die Anzeige als Diagramm. Enthält auch ein kleines Menü, um durch die verschiedenen Messtypen zu navigieren (Temperature, Pressure, ...).
+![ChartComponent](doc/chart.PNG)
 
 ### LoginComponent
 Kümmert sich um die Eingabe der Login-Daten und um entsprechende Weiterleitung bei Erfolg.
 ![LoginComponent](doc/login.png)
 
+<div style="page-break-after: always;"></div>
+
 ### MeasurementFormComponent
 Zuständig für die valide Eingabe von Messdaten. Damit können neue Messungen hinzugefügt werden.
 ![MeasurementFormComponent](doc/newmeasurement.png)
+
+<div style="page-break-after: always;"></div>
 
 ### MeasurementTableComponent
 Ist wie ChartComponent eine Anzeigekomponente für ein Dashboard-Item.
 ![MeasurementTableComponent](doc/table.png)
 
-### MenuComponent
-Das Hauptmenü, welches immer (außer bei Login) angezeigt wird. Benötigt um zu Navigieren.
-![MenuComponent](doc/menu.png)
+<div style="page-break-after: always;"></div>
 
 ### MyStationsListComponent
 Liefert eine Liste mit den eigenen Stationen. Nur möglich wenn man eingeloggt ist, ansonsten wird man auf die Login-Seite navigiert.
 ![MyStationsListComponent](doc/mystations.png)
 
+<div style="page-break-after: always;"></div>
+
 ### MyStationsListItemComponent
 Ein Item für die Liste der eigenen Stationen. Zeigt Informationen zu einer Station an. Außerdem gibt es die Möglichkeit Stationen zu löschen oder auf die Details/Editierungs-Seite zu navigieren.
 ![MyStationsListItemComponent](doc/mystationsitem.png)
+
+<div style="page-break-after: always;"></div>
+
+### MenuComponent
+Das Hauptmenü, welches immer (außer bei Login) angezeigt wird. Benötigt um zu Navigieren.
+![MenuComponent](doc/menu.png)
 
 ### SearchComponent
 Für die Suche von Stationen, Gemeinden, Bezirken oder Ländern (Provinzen) zuständig. Befindet sich am Anfang auf der Dashboard-Seite. Bei Eingabe wird ein Dropdown-Menü geöffnet mit Suchvorschlägen.
@@ -140,14 +154,21 @@ Für die Suche von Stationen, Gemeinden, Bezirken oder Ländern (Provinzen) zust
 Stellt einen Suchvorschlag für die Suche dar.
 ![SearchItemComponent](./doc/searchitem.png)
 
+<div style="page-break-after: always;"></div>
+
 ### StationDetailsComponent
 Zeigt die Details einer Station an. Wenn man eingeloggt und der Besitzer der jeweiligen Station ist, werden auch Lösch- und Editierfunktionen freigeschaltet.
 ![StationDetailsComponent](./doc/stationdetails.png)
 
+<div style="page-break-after: always;"></div>
+
 ### StationFormComponent
 Für die Eingabe von Stationsdaten zuständig. Damit können bereits existierende Stationen editiert und neue hinzugefügt werden.
 ![StationFormComponent Edit](./doc/editstation.png)
+
 ![StationFormComponent New](./doc/newstation.png)
+
+<div style="page-break-after: always;"></div>
 
 # Web
 
