@@ -94,10 +94,12 @@ Aktualisiert ein Item im lokalen Speicher.
 
 ### ChartComponent
 Zuständig für die Anzeige als Diagramm. Enthält auch ein kleines Menü, um durch die verschiedenen Messtypen zu navigieren (Temperature, Pressure, ...).
-![ChartComponent](doc/chart.png)
+
+![ChartComponent](https://github.com/DavidPiringer/Wetr.Web/blob/master/doc/chart.png)
 
 ### DashboardComponent
 Zeigt das Dashboard an. Holt sich die Dashboard-Items mithilfe des Services und generiert daraus DashboardItemComponents.
+
 ![DashboardComponent](./doc/dashboard.png)
 
 ### DashboardItemComponent
