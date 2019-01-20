@@ -88,6 +88,7 @@ Löscht ein Dashboard-Item aus dem lokalen Speicher.
 * `public updateItem(item:DashboardItem)`
 Aktualisiert ein Item im lokalen Speicher.
 
+<div style="page-break-after: always;"></div>
 
 ## Komponenten
 
@@ -137,16 +138,16 @@ Für die Suche von Stationen, Gemeinden, Bezirken oder Ländern (Provinzen) zust
 
 ### SearchItemComponent
 Stellt einen Suchvorschlag für die Suche dar.
-![SearchItemComponent](doc/searchitem.png)
+![SearchItemComponent](./doc/searchitem.png)
 
 ### StationDetailsComponent
 Zeigt die Details einer Station an. Wenn man eingeloggt und der Besitzer der jeweiligen Station ist, werden auch Lösch- und Editierfunktionen freigeschaltet.
-![StationDetailsComponent](doc/stationdetails.png)
+![StationDetailsComponent](./doc/stationdetails.png)
 
 ### StationFormComponent
 Für die Eingabe von Stationsdaten zuständig. Damit können bereits existierende Stationen editiert und neue hinzugefügt werden.
-![StationFormComponent Edit](doc/editstation.png)
-![StationFormComponent New](doc/newstation.png)
+![StationFormComponent Edit](./doc/editstation.png)
+![StationFormComponent New](./doc/newstation.png)
 
 # Web
 
