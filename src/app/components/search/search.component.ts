@@ -39,7 +39,7 @@ export class SearchComponent implements OnInit {
   )
   .subscribe(
     res => this.suggestions = res,
-    err => this.suggestions = [],
+    err => this.suggestions = []
   );
   }
 
@@ -51,6 +51,7 @@ export class SearchComponent implements OnInit {
   }
 
   private addItem(e:SearchResult, stations:Station[]){
+    this.searchText="";
     var item = new DashboardItem();
     var filter = new FilterSettings();
     filter.stations = stations;
