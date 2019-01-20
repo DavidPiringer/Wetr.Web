@@ -1,0 +1,23 @@
+<div class="ui attached stackable blue menu">
+  <div class="ui container">
+    <a class="header item">
+      Wetr.Web
+    </a>
+    <a class="item"  routerLink="/dashboard" routerLinkActive="active">
+      Dashboard
+    </a>
+    <a class="item" routerLink="/my-stations" routerLinkActive="active">
+      My Stations
+    </a>
+    <a class="item" routerLink="/add/measurement" routerLinkActive="active">
+      Add Measurement
+    </a>
+
+    <a class="right item" *ngIf="auth.isLoggedIn()" (click)="logout()">
+      Logout
+    </a>
+    <a class="right item" *ngIf="!auth.isLoggedIn()" routerLink="/login">
+      Login
+    </a>
+  </div>
+</div>

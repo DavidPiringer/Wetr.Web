@@ -1,0 +1,88 @@
+<Wetr-menu></Wetr-menu>
+
+<div class="ui two column centered grid container">
+  <div class="column">
+    <form class="ui form" (ngSubmit)="submitForm()" [formGroup]="measurementForm">
+      <div class="ui segments">
+        <div class="ui secondary segment">
+          <h2 class="ui header">New Measurement</h2>
+        </div>
+        <div class="ui segment">
+          <div class="field">
+            <label>Station</label>
+            <select placeholder="Station" name="station" 
+            formControlName="station"
+            [compareWith]="compareStationById"
+            required>
+              <option *ngFor="let option of stations" [ngValue]="option">
+                {{ option.Id }} - {{ option.Name }}
+              </option>
+            </select>
+            <div class="ui pointing red basic label" *ngIf="errors.station">
+              {{ errors.station }}
+            </div>
+          </div>
+          <div class="field">
+            <label>Date</label>
+            <div class="ui left icon input">
+              <i class="calendar icon"></i>
+              <input suiDatepicker formControlName="date" name="date" required>
+              <div class="ui pointing red basic label" *ngIf="errors.date">
+                {{ errors.date }}
+              </div>
+            </div>
+          </div>
+          <div class="three fields">
+            <div class="field">
+              <label>Temeperature (in &deg;C)</label>
+              <input type="number" formControlName="temperature" name="temperature">
+              <div class="ui pointing red basic label" *ngIf="errors.temperature">
+                {{ errors.temperature }}
+              </div>
+            </div>
+            <div class="field">
+              <label>Pressure</label>
+              <input type="number" formControlName="pressure" name="pressure">
+              <div class="ui pointing red basic label" *ngIf="errors.pressure">
+                {{ errors.pressure }}
+              </div>
+            </div>
+            <div class="field">
+              <label>Rainfall</label>
+              <input type="number" formControlName="rainfall" name="rainfall">
+              <div class="ui pointing red basic label" *ngIf="errors.rainfall">
+                {{ errors.rainfall }}
+              </div>
+            </div>
+          </div>
+          <div class="three fields">
+            <div class="field">
+              <label>Moisture</label>
+              <input type="number" formControlName="moisture" name="moisture">
+              <div class="ui pointing red basic label" *ngIf="errors.moisture">
+                {{ errors.moisture }}
+              </div>
+            </div>
+            <div class="field">
+              <label>Velocity</label>
+              <input type="number" formControlName="velocity" name="velocity">
+              <div class="ui pointing red basic label" *ngIf="errors.velocity">
+                {{ errors.velocity }}
+              </div>
+            </div>
+            <div class="field">
+              <label>Direction</label>
+              <input type="number" formControlName="direction" name="direction">
+              <div class="ui pointing red basic label" *ngIf="errors.direction">
+                {{ errors.direction }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui secondary segment">
+          <button class="ui fluid submit button" type="submit" [disabled]="measurementForm.invalid">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

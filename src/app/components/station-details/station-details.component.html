@@ -1,0 +1,146 @@
+<Wetr-menu></Wetr-menu>
+
+<div class="ui two column centered grid container" *ngIf="station">
+  <div class="column">
+    <div class="ui segments">
+      <div class="ui center aligned secondary segment">
+        <h2 class="ui header">
+          {{station.Name}} 
+        </h2>
+      </div>
+      <div class="ui horizontal segments" style="background-color: white;">
+        <div class="ui right aligned middle aligned segment" style="flex: 1 1;">
+          <h5 class="ui header">
+            {{station.User.Username}}
+            <div class="sub header">Owner</div>
+          </h5>
+        </div>
+        <div class="ui left aligned middle aligned segment">
+          <h5 class="ui header">
+            {{station.StationType?.Name}} - {{station.StationType?.Brand}}
+            <div class="sub header">Type</div>
+          </h5>
+        </div>
+      </div>
+      <div class="ui horizontal segments" style="background-color: white;">
+        <div class="ui right aligned middle aligned segment" style="flex: 1 1;">
+          <h5 class="ui header">
+            {{station.Community.Name}}
+            <div class="sub header">{{station.Community.Zip}} </div>
+          </h5>
+        </div>
+        <div class="ui left aligned middle aligned segment">
+          <h5 class="ui header">
+            {{station.Community.District.Name}}, 
+            <div class="sub header">{{station.Community.District.Province.Name}}</div>
+          </h5>
+        </div>
+      </div>
+      <div class="ui center aligned segment">
+        <h5 class="ui header">
+          {{station.Coordinate.Longitude}}, {{station.Coordinate.Latitude}}
+          <div class="sub header">Coordinates</div>
+        </h5>
+      </div>
+
+      <div class="ui secondary segment" *ngIf="auth.isLoggedIn() && auth.getCurrentUser() == station.User.Username">
+        <div class="three ui mini buttons" *ngIf="!isDeleting">
+          <button class="ui button" (click)="startDelete()">Delete</button>
+          <button class="ui button" (click)="editStation()">Edit</button>
+          <button class="ui button" (click)="showDetails()">Details</button>
+        </div>
+
+        <div class="two ui mini buttons" *ngIf="isDeleting">
+          <button class="ui button" (click)="cancelDelete()">Cancel</button>
+          <div class="or"></div>
+          <button class="ui negative button" (click)="deleteItem()">Delete</button>
+        </div>
+      </div>
+      <div class="ui secondary segment" *ngIf="!(auth.isLoggedIn() && auth.getCurrentUser() == station.User.Username)">
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+    <div class="ui center aligned segments">
+      <div class="ui center aligned secondary clearing  segment">
+        <h3 class="ui left floated header">
+          {{station.Name}} 
+          <div class="sub header">{{station.Coordinate.Longitude}}, {{station.Coordinate.Latitude}}</div>
+        </h3>
+        <a class="ui right floated button" (click)="editStation()" *ngIf="auth.getCurrentUser() == station.User.Username">Edit</a>
+      </div>
+      <div class="ui horizontal segments" style="background-color: white;">
+        <div class="ui center aligned segment">
+          <h5 class="ui center aligned header">
+            {{station.StationType?.Name}}
+            <div class="sub header">{{station.StationType?.Brand}}</div>
+          </h5>
+        </div>
+        <div class="ui center aligned middle aligned segment">
+          <p>{{station.Street}}</p>
+          <p>{{station.Community.Zip}} {{station.Community?.Name}}, {{station.Community.District?.Name}}, {{station.Community.District?.Province?.Name}}</p>
+        </div>
+      </div>
+      <div class="ui center aligned secondary segment">
+        <h5 class="ui center aligned header">
+          {{station.User.Username}}
+          <div class="sub header">Owner</div>
+        </h5>
+      </div>
+    </div>-->
+  </div>
+</div>
+
+<!--
+  <div class="ui description">{{station.Coordinate.Longitude}}, {{station.Coordinate.Latitude}}</div>
+    Id: number;
+  Name: string;
+  StationType: StationType;
+  Coordinate: Coordinate;
+  Street?: string;
+  Community: Community;
+  User: User;
+
+export interface StationType {
+  Id: number;
+  Name?: string;
+  Brand?: string;
+}
+
+
+export interface Coordinate {
+  Longitude: number;
+  Latitude: number;
+}
+
+export interface Community {
+  Id: number;
+  District?: District;
+  Name?: string;
+  Zip: number;
+}
+
+export interface District {
+  Id: number;
+  Name?: string;
+  Province?: Province;
+}
+
+export interface Province {
+  Id: number;
+  Name?: string;
+}
+
+-->

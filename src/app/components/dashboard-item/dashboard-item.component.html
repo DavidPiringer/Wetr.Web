@@ -1,0 +1,58 @@
+<div class="ui segments">
+  <div class="ui secondary clearing segment">
+    <h2 class="ui left floated header" style="margin: 0;">{{item.name}}</h2>
+    <div class="ui right floated mini icon button" (click)="remove()">
+      <i class="times icon"></i>
+    </div>
+  </div>
+  <div class="ui segment">
+    <div class="ui form">
+      <div class="four fields">
+        <div class="field">
+          <label>Interval</label>
+          <sui-select class="fluid selection" placeholder="Interval" [(ngModel)]="item.filter.interval" [isDisabled]="!item.accumulationActive">
+            <sui-select-option *ngFor="let option of intervalOptions" [value]="option"></sui-select-option>
+          </sui-select>
+        </div>
+        <div class="field">
+          <label>Accumulation</label>
+          <sui-select class="fluid selection" placeholder="Accumulation" [(ngModel)]="item.filter.accumulation" [isDisabled]="!item.accumulationActive">
+            <sui-select-option *ngFor="let option of accumulationOptions" [value]="option"></sui-select-option>
+          </sui-select>
+        </div>
+        <div class="field">
+          <label>From</label>
+          <div class="ui left icon input">
+            <i class="calendar icon"></i>
+            <input suiDatepicker [(ngModel)]="item.filter.from" [pickerMaxDate]="item.filter.to">
+          </div>
+        </div>
+        <div class="field">
+          <label>To</label>
+          <div class="ui left icon input">
+            <i class="calendar icon"></i>
+            <input suiDatepicker [(ngModel)]="item.filter.to" [pickerMinDate]="item.filter.from">
+          </div>
+        </div>
+        <button class="ui button" (click)="refreshData()" style="margin-right: 0.5rem;">Go!</button>
+      </div>
+      <div class="field">
+        <sui-checkbox class="toggle" [(ngModel)]="item.accumulationActive">Activate Accumulation</sui-checkbox>
+      </div>
+    </div>
+
+  </div>
+  <div class="ui segment">
+    <div class="ui three item pointing menu">
+      <a class="item" [ngClass]="{'active': activeMenu==0}" (click)="changeMenu(0)">Graph</a>
+      <a class="item" [ngClass]="{'active': activeMenu==1}" (click)="changeMenu(1)">Table</a>
+      <a class="item" [ngClass]="{'active': activeMenu==2}" (click)="changeMenu(2)">Settings</a>
+    </div>
+    <Wetr-chart [measurements]="measurements" [temperatureConversion]="item.temperatureConversion" *ngIf="activeMenu==0"></Wetr-chart>
+    <Wetr-measurement-table [measurements]="measurements" [temperatureConversion]="item.temperatureConversion" *ngIf="activeMenu==1"></Wetr-measurement-table>
+    <Wetr-dashboard-item-settings [item]="item" *ngIf="activeMenu==2"></Wetr-dashboard-item-settings>
+  </div>
+  <div class="ui secondary segment">
+    {{now | date:'medium'}}
+  </div>
+</div>

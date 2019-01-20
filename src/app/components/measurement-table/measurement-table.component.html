@@ -1,0 +1,29 @@
+<div class="ui segment">
+  <table class="ui seven column fixed table">
+    <thead>
+      <tr>
+        <th class=" ">DateTime</th>
+        <th class=" ">Temperature</th>
+        <th class=" ">Pressure</th>
+        <th class=" ">Rainfall</th>
+        <th class=" ">Moisture</th>
+        <th class=" ">Velocity</th>
+        <th class=" ">Direction</th>
+      </tr>
+    </thead>
+  </table>
+    
+  <table class="ui seven column fixed table">
+    <tbody style="display:block; overflow: auto; max-height: 500px;">
+      <tr *ngFor="let m of measurements">
+        <td class=" " data-label="DateTime">{{m.DateTime}}</td>
+        <td class=" " data-label="Temperature">{{m.Temperature}}</td>
+        <td class=" " data-label="Pressure">{{m.Pressure}}</td>
+        <td class=" " data-label="Rainfall">{{m.Rainfall}}</td>
+        <td class=" " data-label="Moisture">{{m.Moisture}}</td>
+        <td class=" " data-label="Velocity">{{m.Velocity}}</td>
+        <td class=" " data-label="Direction">{{m.Direction}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

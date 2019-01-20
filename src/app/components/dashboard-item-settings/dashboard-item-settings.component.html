@@ -1,0 +1,42 @@
+<div class="ui segment">
+  <div class="ui form">
+    <div class="grouped fields">
+      <label>Temperature conversion</label>
+      <div class="field">
+        <sui-radio-button class="toggle" name="tempconv" value="Celsius" [(ngModel)]="item.temperatureConversion" (ngModelChange)="onChange()">
+          Celsius (&deg;C)
+        </sui-radio-button>
+      </div>
+      <div class="field">
+        <sui-radio-button class="toggle" name="tempconv" value="Fahrenheit" [(ngModel)]="item.temperatureConversion" (ngModelChange)="onChange()">
+          Fahrenheit (&deg;F)
+        </sui-radio-button>
+      </div>
+      <div class="field">
+        <sui-radio-button class="toggle" name="tempconv" value="Kelvin" [(ngModel)]="item.temperatureConversion" (ngModelChange)="onChange()">
+          Kelvin (K)
+        </sui-radio-button>
+      </div>
+      <div class="field">
+        <sui-radio-button class="toggle" name="tempconv" value="Rankine" [(ngModel)]="item.temperatureConversion" (ngModelChange)="onChange()">
+          Rankine (&deg;R)
+        </sui-radio-button>
+      </div>
+      <div class="field">
+        <sui-radio-button class="toggle" name="tempconv" value="Delisle" [(ngModel)]="item.temperatureConversion" (ngModelChange)="onChange()">
+          Delisle (&deg;De)
+        </sui-radio-button>
+      </div>
+      <div class="field">
+        <sui-radio-button class="toggle" name="tempconv" value="Reaumur" [(ngModel)]="item.temperatureConversion" (ngModelChange)="onChange()">
+          Réaumur (&deg;Ré)
+        </sui-radio-button>
+      </div>
+      <div class="field">
+        <sui-radio-button class="toggle" name="tempconv" value="Romer" [(ngModel)]="item.temperatureConversion" (ngModelChange)="onChange()">
+          Rømer (&deg;Rø)
+        </sui-radio-button>
+      </div>
+    </div>
+  </div>
+</div>

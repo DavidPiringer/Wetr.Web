@@ -1,0 +1,24 @@
+<Wetr-menu></Wetr-menu>
+<div class="ui three column doubling stackable grid container">
+  <div class="ui column">
+    <div class="massive ui button" routerLink="/add/station"
+    style="width:100%; height:100%; display: flex; justify-content: center; align-items: center;">
+      <div class="ui center aligned icon header" style="width:100%; height:100%; margin:0; padding-top: 12%;">
+        <i class="circular add icon"></i>
+        Add Station
+      </div>
+    </div>
+  </div>
+  <div class="ui column" *ngFor="let s of stations">
+    <Wetr-my-stations-list-item [station]="s" (onDelete)="onItemDelete($event)"></Wetr-my-stations-list-item>
+  </div>
+</div>
+<!--
+<div class="ui relaxed divided selection list">
+  <a class="Wetr-my-stations-list-item item"
+    *ngFor="let s of stations"
+    [station]="s"
+    (onDelete)="onItemDelete($event)">
+  </a>
+</div>
+-->

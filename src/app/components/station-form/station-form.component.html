@@ -1,0 +1,49 @@
+<Wetr-menu></Wetr-menu>
+
+<div class="ui two column centered grid container">
+  <div class="column">
+    <form class="ui form" (ngSubmit)="submitForm()" #stationForm="ngForm">
+      <div class="ui segments">
+        <div class="ui secondary center aligned segment">
+          <h2 class="ui header" *ngIf="isUpdating">Edit Station</h2>
+          <h2 class="ui header" *ngIf="!isUpdating">New Station</h2>
+        </div>
+        <div class="ui segment">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" [(ngModel)]="station.Name" required>
+          </div>
+          <div class="field">
+            <label>Type of Station</label>
+            <select placeholder="Type of Station" name="stationType" 
+            [(ngModel)]="station.StationType"
+            [compareWith]="compareStationTypeById"
+            required>
+              <option *ngFor="let option of stationTypes" [ngValue]="option">
+                {{ option.Name }} - {{ option.Brand }}
+              </option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Street</label>
+            <input type="text" name="street" placeholder="Street" [(ngModel)]="station.Street" required>
+          </div>
+          <div class="field">
+            <label>Community</label>
+            <select placeholder="Community" name="community" 
+            [(ngModel)]="station.Community" 
+            [compareWith]="compareCommunityById"
+            required>
+              <option *ngFor="let option of communities" [ngValue]="option">
+                {{option.Zip}} {{option.Name}}, {{option.District.Name}}, {{option.District.Province.Name}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="ui secondary segment">
+          <button class="ui fluid submit button" type="submit" [disabled]="stationForm.invalid">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

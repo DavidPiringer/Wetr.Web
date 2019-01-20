@@ -1,0 +1,46 @@
+<div class="ui segments">
+  <div class="ui center aligned secondary segment">
+    <h3 class="ui header">
+      {{station.Name}} 
+    </h3>
+  </div>
+  <div class="ui center aligned segment">
+    <h5 class="ui header">
+      {{station.StationType?.Name}} - {{station.StationType?.Brand}}
+      <div class="sub header">Type</div>
+    </h5>
+  </div>
+  <div class="ui horizontal segments" style="background-color: white;">
+    <div class="ui right aligned middle aligned segment" style="flex: 1 1;">
+      <h5 class="ui header">
+        {{station.Community.Name}}
+        <div class="sub header">{{station.Community.Zip}} </div>
+      </h5>
+    </div>
+    <div class="ui left aligned middle aligned segment">
+      <h5 class="ui header">
+        {{station.Community.District.Name}}, 
+        <div class="sub header">{{station.Community.District.Province.Name}}</div>
+      </h5>
+    </div>
+  </div>
+  <div class="ui center aligned segment">
+    <h5 class="ui header">
+      {{station.Coordinate.Longitude}}, {{station.Coordinate.Latitude}}
+      <div class="sub header">Coordinates</div>
+    </h5>
+  </div>
+  <div class="ui secondary segment">
+    <div class="three ui mini buttons" *ngIf="!isDeleting">
+      <button class="ui button" (click)="startDelete()">Delete</button>
+      <button class="ui button" (click)="editStation()">Edit</button>
+      <button class="ui button" (click)="showDetails()">Details</button>
+    </div>
+
+    <div class="two ui mini buttons" *ngIf="isDeleting">
+      <button class="ui button" (click)="cancelDelete()">Cancel</button>
+      <div class="or"></div>
+      <button class="ui negative button" (click)="deleteItem()">Delete</button>
+    </div>
+  </div>
+</div>

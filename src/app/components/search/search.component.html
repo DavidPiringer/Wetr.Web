@@ -1,0 +1,41 @@
+<div class="ui segments">
+  <div class="ui secondary segment">
+    <h4 class="header">
+      Search for Stations, Communities, Districts or Provinces ...
+    </h4>
+  </div>
+  <!--<div class="ui segment">
+    <div class="ui form">
+      <div class="inline four fields">
+        <label>Filter</label>
+        <div class="field">
+            <sui-checkbox [(ngModel)]="eCheck" [isDisabled]="eCheckDisabled" [isReadonly]="eCheckReadonly">
+              Stations
+            </sui-checkbox>
+        </div>
+        <div class="field">
+            <sui-checkbox [(ngModel)]="eCheckDisabled">Communities</sui-checkbox>
+        </div>
+        <div class="field">
+            <sui-checkbox [(ngModel)]="eCheckReadonly">Districts</sui-checkbox>
+        </div>
+        <div class="field">
+            <sui-checkbox [(ngModel)]="eCheck">Provinces</sui-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>-->
+  <div class="ui segment">
+    <div class="ui fluid input">
+      <input type="text" placeholder="Search for stations ..." [(ngModel)]="searchText" (keyup)="keyup.emit(searchTerm.value)" #searchTerm>
+      <div class="search-suggestions" *ngIf="suggestions.length > 0">
+        <div class="ui relaxed divided selection list">
+          <a class="Wetr-search-item item"
+            *ngFor="let s of suggestions"
+            [suggestion]="s"
+            (click)="searchResultSelected(s)">
+          </a>
+      </div>
+    </div>
+  </div>
+</div>

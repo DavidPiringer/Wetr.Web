@@ -1,0 +1,22 @@
+
+<div class="ui top attached tabular six item menu">
+  <a class="item" [ngClass]="{'active': activeMenu==0}" (click)="changeMenu(0)">Temperature</a>
+  <a class="item" [ngClass]="{'active': activeMenu==1}" (click)="changeMenu(1)">Pressure</a>
+  <a class="item" [ngClass]="{'active': activeMenu==2}" (click)="changeMenu(2)">Rainfall</a>
+  <a class="item" [ngClass]="{'active': activeMenu==3}" (click)="changeMenu(3)">Moisture</a>
+  <a class="item" [ngClass]="{'active': activeMenu==4}" (click)="changeMenu(4)">Velocity</a>
+  <a class="item" [ngClass]="{'active': activeMenu==5}" (click)="changeMenu(5)">Direction</a>
+</div>
+<div class="ui bottom attached segment">
+  <div style="display: block;">
+    <canvas baseChart height="100"
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [legend]="lineChartLegend"
+      [chartType]="lineChartType"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"></canvas>
+  </div>
+</div>

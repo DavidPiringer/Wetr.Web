@@ -1,0 +1,11 @@
+
+<Wetr-menu></Wetr-menu>
+
+<div class="ui one column doubling stackable grid container">
+  <div class="column">
+    <Wetr-search (onAddItem)="onItemAdd($event)"></Wetr-search>
+  </div>
+  <div class="column" *ngFor="let item of items">
+    <Wetr-dashboard-item [item]="item" (onDelete)="onItemDelete($event)"></Wetr-dashboard-item>
+  </div>
+</div>

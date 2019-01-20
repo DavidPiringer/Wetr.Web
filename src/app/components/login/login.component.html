@@ -1,0 +1,25 @@
+<div class="ui middle aligned four column centered grid full-height">
+  <div class="column center aligned">
+    <div class="ui segment">
+        <h2 class="ui blue header centered">Wetr.Web Login</h2>
+    </div>
+    <form class="ui large form" (ngSubmit)="submitForm()" #loginForm="ngForm">
+      <div class="ui segment">
+        <div class="ui negative message" *ngIf="errorMessage != null">{{errorMessage}}</div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input [(ngModel)]="loginParams.username" required type="text" name="username" placeholder="Username">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input [(ngModel)]="loginParams.password" required type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <button class="ui fluid blue large submit button" type="submit" [disabled]="loginForm.invalid">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
