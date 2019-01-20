@@ -93,60 +93,60 @@ Aktualisiert ein Item im lokalen Speicher.
 
 ### ChartComponent
 Zuständig für die Anzeige als Diagramm. Enthält auch ein kleines Menü, um durch die verschiedenen Messtypen zu navigieren (Temperature, Pressure, ...).
-![Data Access Layer](doc/chart.png)
+![ChartComponent](doc/chart.png)
 
 ### DashboardComponent
 Zeigt das Dashboard an. Holt sich die Dashboard-Items mithilfe des Services und generiert daraus DashboardItemComponents.
-![Data Access Layer](doc/dashboard.png)
+![DashboardComponent](doc/dashboard.png)
 
 ### DashboardItemComponent
 Ist eine einzelne Anzeige auf dem Dashboard. Hier können verschiedenste Abfragen durchgeführt und die Präferenzen gespeichert werden.
-![Data Access Layer](doc/dashboarditem.png)
+![DashboardItemComponent](doc/dashboarditem.png)
 
 ### DashboardItemSettingsComponent
 Ist eine Teilkomponente eines Dashboard-Items. Hier kann die Konvertierung der Temperatur (Celsius, Fahrenheit, ...) eingestellt werden.
-![Data Access Layer](doc/dashboarditemsettings.png)
+![DashboardItemSettingsComponent](doc/dashboarditemsettings.png)
 
 ### LoginComponent
 Kümmert sich um die Eingabe der Login-Daten und um entsprechende Weiterleitung bei Erfolg.
-![Data Access Layer](doc/login.png)
+![LoginComponent](doc/login.png)
 
 ### MeasurementFormComponent
 Zuständig für die valide Eingabe von Messdaten. Damit können neue Messungen hinzugefügt werden.
-![Data Access Layer](doc/newmeasurement.png)
+![MeasurementFormComponent](doc/newmeasurement.png)
 
 ### MeasurementTableComponent
 Ist wie ChartComponent eine Anzeigekomponente für ein Dashboard-Item.
-![Data Access Layer](doc/table.png)
+![MeasurementTableComponent](doc/table.png)
 
 ### MenuComponent
 Das Hauptmenü, welches immer (außer bei Login) angezeigt wird. Benötigt um zu Navigieren.
-![Data Access Layer](doc/menu.png)
+![MenuComponent](doc/menu.png)
 
 ### MyStationsListComponent
 Liefert eine Liste mit den eigenen Stationen. Nur möglich wenn man eingeloggt ist, ansonsten wird man auf die Login-Seite navigiert.
-![Data Access Layer](doc/mystations.png)
+![MyStationsListComponent](doc/mystations.png)
 
 ### MyStationsListItemComponent
 Ein Item für die Liste der eigenen Stationen. Zeigt Informationen zu einer Station an. Außerdem gibt es die Möglichkeit Stationen zu löschen oder auf die Details/Editierungs-Seite zu navigieren.
-![Data Access Layer](doc/mystationsitem.png)
+![MyStationsListItemComponent](doc/mystationsitem.png)
 
 ### SearchComponent
 Für die Suche von Stationen, Gemeinden, Bezirken oder Ländern (Provinzen) zuständig. Befindet sich am Anfang auf der Dashboard-Seite. Bei Eingabe wird ein Dropdown-Menü geöffnet mit Suchvorschlägen.
-![Data Access Layer](doc/search.png)
+![SearchComponent](doc/search.png)
 
 ### SearchItemComponent
 Stellt einen Suchvorschlag für die Suche dar.
-![Data Access Layer](doc/searchitem.png)
+![SearchItemComponent](doc/searchitem.png)
 
 ### StationDetailsComponent
 Zeigt die Details einer Station an. Wenn man eingeloggt und der Besitzer der jeweiligen Station ist, werden auch Lösch- und Editierfunktionen freigeschaltet.
-![Data Access Layer](doc/stationdetails.png)
+![StationDetailsComponent](doc/stationdetails.png)
 
 ### StationFormComponent
 Für die Eingabe von Stationsdaten zuständig. Damit können bereits existierende Stationen editiert und neue hinzugefügt werden.
-![Data Access Layer](doc/editstation.png)
-![Data Access Layer](doc/newstation.png)
+![StationFormComponent Edit](doc/editstation.png)
+![StationFormComponent New](doc/newstation.png)
 
 # Web
 
