@@ -85,7 +85,21 @@ export class MeasurementFormComponent implements OnInit {
   }
 
   submitForm(){
-    this.measurementService.Insert(this.measurement).subscribe(res => this.router.navigateByUrl("/"));
+    this.measurementService.Insert(this.extractMessage()).subscribe(res => this.router.navigateByUrl("/"));
+  }
+
+  extractMessage(): Measurement{
+    var m: Measurement = new Measurement();
+    m.Id = 0;
+    m.StationId = this.measurementForm.value.station.Id;
+    m.DateTime = this.measurementForm.value.date;
+    m.Temperature = this.measurementForm.value.temperature;
+    m.Pressure = this.measurementForm.value.pressure;
+    m.Rainfall = this.measurementForm.value.rainfall;
+    m.Moisture = this.measurementForm.value.moisture;
+    m.Velocity = this.measurementForm.value.velocity;
+    m.Direction = this.measurementForm.value.direction;
+    return m;
   }
 
 }

@@ -110,8 +110,7 @@ export class MeasurementService extends Base {
   Insert(m: Measurement): Observable<null> {
     let params = this.newParams();
     let headers = new HttpHeaders();
-    let body: any = null;
-    body = m;
+    let body: any = m;
     let req = new HttpRequest<any>(
       'POST',
       this.rootUrl + `/api/measurements`,
